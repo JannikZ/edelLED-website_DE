@@ -93,33 +93,15 @@
 							<article id="products">
 								<h2 class="major">Produkte</h2>
   <div class="video-container">
-    <video id="video1" class="active" autoplay muted loop playsinline webkit-playsinline>
-      <source src="videos/eins.mp4" type="video/mp4">
-    </video>
-    <video id="video2" autoplay muted loop playsinline webkit-playsinline>
-      <source src="videos/zwei.mp4" type="video/mp4">
-    </video>
-    <video id="video3" autoplay muted loop playsinline webkit-playsinline>
-      <source src="videos/drei.mp4" type="video/mp4">
-    </video>
-    <video id="video4" autoplay muted loop playsinline webkit-playsinline>
-      <source src="videos/vier.mp4" type="video/mp4">
-    </video>
-    <video id="video5" autoplay muted loop playsinline webkit-playsinline>
-      <source src="videos/fuenf.mp4" type="video/mp4">
-    </video>
-    <video id="video6" autoplay muted loop playsinline webkit-playsinline>
-      <source src="videos/sechs.mp4" type="video/mp4">
-    </video>
-    <video id="video8" autoplay muted loop playsinline webkit-playsinline>
-      <source src="videos/acht.mp4" type="video/mp4">
-    </video>
-    <video id="video9" autoplay muted loop playsinline webkit-playsinline>
-      <source src="videos/neun.mp4" type="video/mp4">
-    </video>
-    <video id="video10" autoplay muted loop playsinline webkit-playsinline>
-      <source src="videos/zehn.mp4" type="video/mp4">
-    </video>
+    <video id="video1" class="active" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
+    <video id="video2" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
+    <video id="video3" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
+    <video id="video4" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
+    <video id="video5" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
+    <video id="video6" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
+    <video id="video8" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
+    <video id="video9" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
+    <video id="video10" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
   </div>
 
   <!-- Menü-Balken -->
@@ -337,7 +319,7 @@
 
 
 
-<p>Jedes Produkt wird auf Zuverlässigkeit, Langlebigkeit und ästhetische Qualität ausgelegt, sodass Ihre Küche nicht nur großartig aussieht, sondern über Jahre hinweg einwandfrei funktioniert.</p>
+<p>Jedes Produkt wird auf Zuverlässigkeit, Langlebigkeit und ästhetische Qualität ausgewählt, sodass Ihre Küche nicht nur großartig aussieht, sondern über Jahre hinweg einwandfrei funktioniert.</p>
 
 
 
@@ -567,6 +549,36 @@ Personenbezogene Daten, die über das Kontaktformular eingegeben werden, werden 
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+
+<script>
+  // Nach 5 Sekunden die Videos im Hintergrund laden
+  setTimeout(() => {
+    const videos = [
+      { id: "video1", src: "videos/eins.mp4" },
+      { id: "video2", src: "videos/zwei.mp4" },
+      { id: "video3", src: "videos/drei.mp4" },
+      { id: "video4", src: "videos/vier.mp4" },
+      { id: "video5", src: "videos/fuenf.mp4" },
+      { id: "video6", src: "videos/sechs.mp4" },
+      { id: "video8", src: "videos/acht.mp4" },
+      { id: "video9", src: "videos/neun.mp4" },
+      { id: "video10", src: "videos/zehn.mp4" }
+    ];
+
+    videos.forEach(v => {
+      const video = document.getElementById(v.id);
+      if (video) {
+        const source = document.createElement("source");
+        source.src = v.src;
+        source.type = "video/mp4";
+        video.appendChild(source);
+        video.load(); // Browser startet Preloading im Hintergrund
+      }
+    });
+  }, 2000); // 5 Sekunden warten
+</script>
+
 
 
 <script>
