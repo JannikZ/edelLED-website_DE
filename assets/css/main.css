@@ -2310,3 +2310,40 @@ video.active {
   }
 }
 
+
+/* Language Switcher */
+
+.lang-switch {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-family: sans-serif;
+  font-size: 14px;
+  z-index: 10000;
+}
+
+.lang-switch a {
+  color: #fff;
+  text-decoration: none;
+  padding: 4px 6px;
+}
+
+.lang-switch a:hover {
+  text-decoration: underline;
+}
+
+.lang-switch .active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* 🔴 Verstecken, sobald ein Panel/Popup aktiv ist */
+body.is-article-visible .lang-switch {
+  display: none !important;
+}
+
+.lang-switch.hidden {
+  display: none !important;
+}
+
+
