@@ -34,6 +34,12 @@
 	</head>
 	<body class="is-preload">
 
+  <!-- Language Switcher -->
+  <div class="lang-switch hidden">
+    <a href="https://edelled.de" class="active">DE</a> | 
+    <a href="https://edelled.com">EN</a>
+  </div>
+
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -724,7 +730,15 @@ ledCards.forEach(card => {
 
 
 
+<!-- Language Switcher -->
 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+      document.querySelector(".lang-switch").classList.remove("hidden");
+    }, 2000);
+  });
+</script>
 
 
 
