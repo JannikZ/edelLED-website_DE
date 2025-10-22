@@ -1830,6 +1830,20 @@ video.active {
   display: block;
 }
 
+
+
+.video-overlay {
+  position: absolute;
+  top: 32%;      /* vertikale Position relativ zum Video */
+  left: 56.5%;     /* horizontale Position relativ zum Video */
+  width: 15%;    /* SVG skaliert prozentual zur Videobreite */
+  height: auto;
+  transform: translate(-50%, -50%); /* zentriert das SVG um seinen Mittelpunkt */
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.3;
+}
+
 /* Menu Bar */
 .menu-bar {
   width: 100%;               /* flexible width */
@@ -1843,6 +1857,54 @@ video.active {
   gap: 15px;                /* spacing between icons */
   box-shadow: 0 0 8px rgba(0,0,0,0.5);
 }
+
+.menu-bar2 {
+  width: 100%;               /* volle Breite der Column */
+  max-width: 450px;          /* maximale Breite */
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 8px 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;                 /* Abstand zwischen Icons */
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+  margin: 0;                 /* margin wird vom Wrapper übernommen */
+}
+
+.menu-bar-wrapper {
+  display: flex;
+  gap: 120px;                 /* horizontaler Abstand zwischen den Bars */
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.menu-bar-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* sorgt dafür, dass die Option mittig steht */
+  text-align: center;
+}
+
+.menu-option {
+  margin-top: 8px;           /* Abstand unter der Bar */
+  font-style: italic;
+  /* font-size: 16px; */
+  /* font-weight: fine; */
+}
+
+/* Mobile Ansicht: Abstand zwischen den Bars reduzieren */
+@media (max-width: 500px) {
+  .menu-bar-wrapper {
+    gap: 20px;  /* Abstand nur auf mobilen Geräten */
+  }
+}
+
+
+
+
+
+
+
 
 /* Icon Wrapper: vertical layout */
 .icon-wrapper {
@@ -1968,6 +2030,23 @@ video.active {
 }
 
 .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Bild füllt Container aus */
+  display: block;
+}
+
+
+.image-container2 {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  overflow: hidden;
+  border-radius: 2px;        /* gleiche Rundung */
+  box-shadow: 0 0 20px rgba(0,0,0,0.6); /* gleicher Schatten */
+}
+
+.image-container2 img {
   width: 100%;
   height: 100%;
   object-fit: cover;  /* Bild füllt Container aus */
@@ -2342,8 +2421,145 @@ body.is-article-visible .lang-switch {
   display: none !important;
 }
 
+
 .lang-switch.hidden {
   display: none !important;
 }
+
+
+/* --- Clean edelLED Tabs (ohne Box, rein textbasiert) --- */
+.tab-buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 0 2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 0.5rem;
+}
+
+.tab-button {
+  all: unset; /* entfernt ALLE Standard-Button-Stile */
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  position: relative;
+  padding: 0.3rem 0;
+  transition: color 0.25s ease;
+}
+
+.tab-button::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.25s ease;
+}
+
+.tab-button:hover {
+  color: #fff;
+}
+
+.tab-button.active {
+  color: #fff;
+}
+
+.tab-button.active::after {
+  width: 100%;
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+.modal {
+  display: none; /* unsichtbar standardmäßig */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+
+
+
+
+
+/* Link-Drop-Down-Bild-Stil */
+/* Einklappbarer Bereich */
+.hint-box {
+  display: none;
+  position: relative;
+  margin-top: 10px;
+  padding: 10px;
+  background: #1c1a1a;
+  border-radius: 8px;
+}
+
+/* Header oberhalb des Bildes */
+.hint-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 6px;
+}
+
+/* Schließen-Button */
+.close-btn {
+  background: rgba(0, 0, 0, 0.15);
+  border: none;
+  color: #000;
+  font-size: 30px;
+  font-weight: 100;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 4px rgba(0,0,0,0.25);
+}
+
+.close-btn:hover {
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Bild */
+.hint-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+
+
+
+
 
 
