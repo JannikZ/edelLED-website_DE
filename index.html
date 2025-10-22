@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <!--
 	Dimension by HTML5 UP
@@ -98,6 +99,18 @@
 						<!-- Products -->
 							<article id="products">
 								<h2 class="major">Produkte</h2>
+
+  <!-- Tabs Navigation -->
+  <div class="tab-buttons">
+    <button class="tab-button active" data-tab="general">Allgemein</button>
+    <button class="tab-button" data-tab="dishwasher">Status-LED</button>
+  </div>
+
+  <!-- Tab Content -->
+  <div class="tab-content active" id="tab-general">
+    <!-- Hier bleibt der bisherige Products-Inhalt -->
+
+
   <div class="video-container">
     <video id="video1" class="active" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
     <video id="video2" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
@@ -331,7 +344,171 @@
 
 
 
+  </div> <!-- Ende tab-general -->
 
+  <div class="tab-content" id="tab-dishwasher">
+
+
+
+
+
+
+
+
+
+
+
+  <div class="video-container">
+    <video id="video2.1" class="active" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
+<img src="images/dishwasher.svg" alt="Overlay" class="video-overlay">
+    <video id="video3.1" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
+    <video id="video1.1" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
+
+<video id="video4.1" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
+<video id="video5.1" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
+<video id="video6.1" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
+  </div>
+
+
+
+
+
+
+
+
+
+  <!-- Menü-Balken -->
+
+  <!-- bestehende Menü-Bar -->
+
+<!-- Container für die beiden Menü-Bars nebeneinander -->
+<div class="menu-bar-wrapper">
+  <!-- Originale Menü-Bar -->
+
+<div class="menu-bar-column">
+  <div class="menu-bar2">
+    <div class="icon-wrapper active" data-video="video2.1">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>
+      <span class="icon-label">An</span>
+    </div>
+
+
+    <div class="icon-wrapper" data-video="video3.1">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+</svg>
+
+      <span class="icon-label">Fertig</span>
+    </div>
+
+
+
+    <div class="icon-wrapper" data-video="video1.1">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle></svg>
+      <span class="icon-label">Aus</span>
+
+    </div>
+
+ </div>
+<div class="menu-option">Small</div>
+</div>
+
+
+<div class="menu-bar-column">
+ <div class="menu-bar2 copy">
+    <div class="icon-wrapper active" data-video="video4.1">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>
+      <span class="icon-label">An</span>
+    </div>
+
+
+    <div class="icon-wrapper" data-video="video5.1">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+</svg>
+
+      <span class="icon-label">Fertig</span>
+    </div>
+
+
+
+    <div class="icon-wrapper" data-video="video6.1">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle></svg>
+      <span class="icon-label">Aus</span>
+
+    </div>
+
+ </div>
+<div class="menu-option">Large</div>
+ </div>
+
+
+
+
+
+
+  </div>
+
+
+<!-- Hinweis-Icon -->
+<div class="hint-icon">
+  <!-- Beispiel: ein einfacher Pfeil nach rechts als SVG -->
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59" />
+</svg>
+
+</div>
+
+
+
+
+
+
+
+<p><strong>Geschirrspüler-Status-Anzeige</strong><br><br>
+Erleben Sie, wie edelLED Ihre Küche smarter und funktionaler macht! Unsere schlanken und intelligenten Status-LEDs visualisieren den Betrieb Ihres Geschirrspülers auf elegante Weise – und das sogar bei Modellen ohne WLAN. Ob Sie Ihre bestehende Küche aufrüsten oder eine neue High-Tech-Küche planen – diese LED-Lösung ist die perfekte Ergänzung.</p>
+
+
+<p><strong>Wählen Sie die perfekte Größe:</strong><br>
+Unsere Status-LEDs gibt es in zwei Varianten: <br> <br>
+<em>Small:</em> <br>Dezent und stilvoll, zeigt den Betrieb subtil auf den Boden projiziert.<br><br>
+<em>Large:</em> <br>Eindrucksvoll und großflächig, projiziert den Status über die gesamte Breite des Geschirrspülers (ca. 60 cm). Ideal für maximale Sichtbarkeit in großen Büros oder Firmenküchen.
+</p>
+
+<p><strong>Ihre Vorteile auf einen Blick:</strong></p>
+<ul>
+  <li>Klare, sofort erkennbare Visualisierung des Betriebsmodus</li>
+  <li>Kompatibel mit nahezu allen Geschirrspüler-Modellen, auch ohne WLAN</li>
+  <li>Individuell einstellbare Farben – passend zu Ihrem Raumlicht</li>
+  <li>Flexibles Dimmverhalten für jede Stimmung</li>
+</ul>
+
+<p>Mehr Details finden Sie in den <u><a href="#" id="hintLink" class="hint-link">Hinweisen</a></u> zu LED-Statusanzeigen und Signal-LEDs.</p>
+
+
+
+
+
+<!-- Einklappbarer Bereich -->
+<div id="hintBox" class="hint-box">
+  <div class="hint-header">
+    <button class="close-btn" id="closeHint">&times;</button>
+  </div>
+  <div class="image-container2">
+    <img src="images/Status-LED.png" alt="edelLED Kitchen Connectivity">
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+  </div>
 
 
 
@@ -587,6 +764,36 @@ Personenbezogene Daten, die über das Kontaktformular eingegeben werden, werden 
 
 
 
+
+<script>
+  // Nach 5 Sekunden die Videos im Hintergrund laden
+  setTimeout(() => {
+    const videos = [
+      { id: "video1.1", src: "videos/Dishwasher/off.mp4" },
+      { id: "video2.1", src: "videos/Dishwasher/red_dot.mp4" },
+      { id: "video3.1", src: "videos/Dishwasher/green_dot.mp4" },
+{ id: "video4.1", src: "videos/Dishwasher/red_bar.mp4" },
+{ id: "video5.1", src: "videos/Dishwasher/green_bar.mp4" },
+{ id: "video6.1", src: "videos/Dishwasher/off.mp4" },
+    ];
+
+    videos.forEach(v => {
+      const video = document.getElementById(v.id);
+      if (video) {
+        const source = document.createElement("source");
+        source.src = v.src;
+        source.type = "video/mp4";
+        video.appendChild(source);
+        video.load(); // Browser startet Preloading im Hintergrund
+      }
+    });
+  }, 2000); // 5 Sekunden warten
+</script>
+
+
+
+
+
 <script>
   const videos = document.querySelectorAll("video");
   const icons = document.querySelectorAll(".icon-wrapper");
@@ -739,6 +946,77 @@ ledCards.forEach(card => {
     }, 2000);
   });
 </script>
+
+
+<script>
+  // Tab switching logic
+  document.querySelectorAll('.tab-button').forEach(button => {
+    button.addEventListener('click', () => {
+      const tabId = button.getAttribute('data-tab');
+
+      document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+      button.classList.add('active');
+
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.getElementById('tab-' + tabId).classList.add('active');
+    });
+  });
+</script>
+
+
+
+<script>
+document.querySelectorAll('.tab-button').forEach(button => {
+  button.addEventListener('click', () => {
+    // Tabs aktiv setzen
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+
+    const tabId = 'tab-' + button.dataset.tab;
+    const activeTab = document.getElementById(tabId);
+    activeTab.classList.add('active');
+    button.classList.add('active');
+
+    // Menü-Bar auswählen, je nachdem welches Tab
+    let menuBar = activeTab.querySelector('.menu-bar');
+    if (!menuBar) {
+      menuBar = activeTab.querySelector('.menu-bar2'); // für dishwasher Tab
+    }
+
+    // Automatisch das erste Icon klicken
+    const firstIcon = menuBar?.querySelector('.icon-wrapper');
+    if (firstIcon) {
+      firstIcon.click();
+    }
+  });
+});
+</script>
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const link = document.getElementById("hintLink");
+  const box = document.getElementById("hintBox");
+  const close = document.getElementById("closeHint");
+
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    // Toggle sichtbar machen
+    box.style.display = "block";
+    // optional smooth scroll zum Bild
+    box.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  close.addEventListener("click", () => {
+    box.style.display = "none";
+  });
+});
+</script>
+
+
+
 
 
 
