@@ -354,8 +354,12 @@
 
 
 
+<!-- Gemeinsamer Wrapper für beide Varianten -->
+<div class="dishwasher-wrapper">
 
 
+	<!-- HOCHGEBAUT -->
+	<div class="dishwasher-section active" id="hochgebaut-section">
 
 
   <div class="video-container">
@@ -367,17 +371,17 @@
 <video id="video4.1" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
 <video id="video5.1" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
 <video id="video6.1" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
+
   </div>
 
+<!-- Umschalt-Buttons (oben!) -->
+<div class="video-overlay-buttons">
+  <button class="video-btn active" data-target="hochgebaut-section">Hochgebaut</button>
+  <button class="video-btn" data-target="unterbau-section">Unterbau</button>
+</div>
 
 
-
-
-
-
-
-
-  <!-- Menü-Balken -->
+  <!-- Menü-Balken Hochgebaut-->
 
   <!-- bestehende Menü-Bar -->
 
@@ -444,10 +448,113 @@
 
 
 
+  </div>
+
+  </div> <!-- Ende HOCHGEBAUT -->
+
+
+
+
+<!-- UNTERBAU -->
+<div class="dishwasher-section" id="unterbau-section">
+
+  <div class="video-container">
+    <video id="video_u1" class="active" preload="none" autoplay muted loop playsinline webkit-playsinline>
+</video>
+<img src="images/dishwasher.svg" alt="Overlay" class="video-overlay2">
+    <video id="video_u2" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
+    <video id="video_u3" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
+
+<video id="video_u4" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
+<video id="video_u5" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
+<video id="video_u6" preload="none" autoplay muted loop playsinline webkit-playsinline></video>
+
+  </div>
+
+<!-- Umschalt-Buttons (oben!) -->
+<div class="video-overlay-buttons">
+  <button class="video-btn active" data-target="hochgebaut-section">Hochgebaut</button>
+  <button class="video-btn" data-target="unterbau-section">Unterbau</button>
+</div>
+
+  <!-- Menü-Balken UNTERBAU-->
+
+
+<!-- Container für die beiden Menü-Bars nebeneinander -->
+<div class="menu-bar-wrapper">
+  <!-- Originale Menü-Bar -->
+
+<div class="menu-bar-column">
+  <div class="menu-bar2">
+    <div class="icon-wrapper active" data-video="video_u1">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>
+      <span class="icon-label">An</span>
+    </div>
+
+
+    <div class="icon-wrapper" data-video="video_u2">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+</svg>
+
+      <span class="icon-label">Fertig</span>
+    </div>
+
+
+
+    <div class="icon-wrapper" data-video="video_u3">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle></svg>
+      <span class="icon-label">Aus</span>
+
+    </div>
+
+ </div>
+<div class="menu-option">Small</div>
+</div>
+
+
+<div class="menu-bar-column">
+ <div class="menu-bar2 copy">
+    <div class="icon-wrapper active" data-video="video_u4">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>
+      <span class="icon-label">An</span>
+    </div>
+
+
+    <div class="icon-wrapper" data-video="video_u5">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+</svg>
+
+      <span class="icon-label">Fertig</span>
+    </div>
+
+
+
+    <div class="icon-wrapper" data-video="video_u6">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle></svg>
+      <span class="icon-label">Aus</span>
+
+    </div>
+
+ </div>
+<div class="menu-option">Large</div>
+ </div>
 
 
 
   </div>
+
+
+</div> <!-- Ende UNTERBAU -->
+
+</div> <!-- Ende Wrapper -->
+
+
+
+
+
+
 
 
 <!-- Hinweis-Icon -->
@@ -486,6 +593,49 @@ Unsere Status-LEDs gibt es in zwei Varianten: <br>
 </ul>
 
 <br>
+
+
+
+
+<!-- Bilder Galerie -->
+<div class="dishwasher-gallery">
+<p><strong>Bilder Galerie:</strong></p>
+<p class="align-center">GESCHIRRSPÜLER HOCHGEBAUT:</p>
+  <!-- 12 Bilder insgesamt, 3 pro Reihe -->
+  <div class="gallery-grid">
+    <img src="images/Dishwasher/hochgebaut_red_dot.png" alt="Status-LED Rot">
+    <img src="images/Dishwasher/hochgebaut_green_dot.png" alt="Status-LED Grün">
+    <img src="images/Dishwasher/hochgebaut_off.png" alt="Status-LED aus">
+  </div>
+<p class="align-center"><em style="font-size: 0.8rem;">Geschirrspüler hochgebaut - Small Status-LED</em></p>
+
+  <div class="gallery-grid">
+    <img src="images/Dishwasher/hochgebaut_red_bar.png" alt="Status-LED Rot">
+    <img src="images/Dishwasher/hochgebaut_green_bar.png" alt="Status-LED Grün">
+    <img src="images/Dishwasher/hochgebaut_off.png" alt="Status-LED aus">
+  </div>
+<p class="align-center"><em style="font-size: 0.8rem;">Geschirrspüler hochgebaut - Large Status-LED</em></p>
+
+<hr class="section-separator">
+<p class="align-center">GESCHIRRSPÜLER UNTERGEBAUT:</p>
+  <div class="gallery-grid">
+    <img src="images/Dishwasher/unterbau_red_dot.png" alt="Status-LED Rot">
+    <img src="images/Dishwasher/unterbau_green_dot.png" alt="Status-LED Grün">
+    <img src="images/Dishwasher/unterbau_off.png" alt="Status-LED aus">
+  </div>
+<p class="align-center"><em style="font-size: 0.8rem;">Geschirrspüler untergebaut - Small Status-LED</em></p>
+
+  <div class="gallery-grid">
+    <img src="images/Dishwasher/unterbau_red_bar.png" alt="Status-LED Rot">
+    <img src="images/Dishwasher/unterbau_green_bar.png" alt="Status-LED Grün">
+    <img src="images/Dishwasher/unterbau_off.png" alt="Status-LED aus">
+  </div>
+<p class="align-center"><em style="font-size: 0.8rem;">Geschirrspüler untergebaut - Large Status-LED</em></p>
+
+</div>
+
+
+<br>
 <p>Mehr Details finden Sie in den <u><a href="#" id="hintLink" class="hint-link">Hinweisen</a></u> zu LED-Statusanzeigen und Signal-LEDs.</p>
 
 
@@ -501,13 +651,6 @@ Unsere Status-LEDs gibt es in zwei Varianten: <br>
     <img src="images/Status-LED.png" alt="edelLED Kitchen Connectivity">
   </div>
 </div>
-
-
-
-
-
-
-
 
 
 
@@ -794,6 +937,32 @@ Personenbezogene Daten, die über das Kontaktformular eingegeben werden, werden 
 </script>
 
 
+<script>
+  // Nach 5 Sekunden die Videos im Hintergrund laden
+  setTimeout(() => {
+    const videos = [
+      { id: "video_u1", src: "videos/Dishwasher/unterbau/red_dot.mp4" },
+      { id: "video_u2", src: "videos/Dishwasher/unterbau/green_dot.mp4" },
+      { id: "video_u3", src: "videos/Dishwasher/unterbau/off.mp4" },
+{ id: "video_u4", src: "videos/Dishwasher/unterbau/red_bar.mp4" },
+{ id: "video_u5", src: "videos/Dishwasher/unterbau/green_bar.mp4" },
+{ id: "video_u6", src: "videos/Dishwasher/unterbau/off.mp4" },
+    ];
+
+    videos.forEach(v => {
+      const video = document.getElementById(v.id);
+      if (video) {
+        const source = document.createElement("source");
+        source.src = v.src;
+        source.type = "video/mp4";
+        video.appendChild(source);
+        video.load(); // Browser startet Preloading im Hintergrund
+      }
+    });
+  }, 2000); // 5 Sekunden warten
+</script>
+
+
 
 
 
@@ -1021,14 +1190,164 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+<!-- Overlay Buttons Videos -->
+
+
+<script>
+document.querySelectorAll('.video-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    // Entferne 'active' von allen Buttons
+    document.querySelectorAll('.video-btn').forEach(btn => btn.classList.remove('active'));
+    
+    // Setze 'active' auf den geklickten Button
+    button.classList.add('active');
+  });
+});
+</script>
 
 
 
+<!-- Video Steuerung Hochgestellt und Unterbau -->
 
 
 
+<script>
+// --- Steuerung für Hochgebaut / Unterbau Videos ---
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".video-btn");
+  const sections = document.querySelectorAll(".dishwasher-section");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      // 1. Button-Zustand aktualisieren
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      // 2. Zielabschnitt aktivieren
+      const targetId = btn.dataset.target;
+      sections.forEach(sec => sec.classList.remove("active"));
+      const activeSection = document.getElementById(targetId);
+      activeSection.classList.add("active");
+
+      // 3. Alle Videos pausieren
+      document.querySelectorAll("video").forEach(v => v.pause());
+
+      // 4. Alle Icons der Menü-Bar zurücksetzen
+      activeSection.querySelectorAll(".icon-wrapper").forEach(icon => icon.classList.remove("active"));
+
+      // 5. Erstes Icon automatisch klicken
+      const firstIcon = activeSection.querySelector(".icon-wrapper");
+      if (firstIcon) {
+        firstIcon.click(); // <-- hier wird der Klick getriggert
+      }
+
+// Wenn Tab "dishwasher" wieder aktiviert wird, den aktiven Button erneut auslösen
+document.querySelector('[data-tab="dishwasher"]').addEventListener('click', () => {
+  const activeVideoBtn = document.querySelector('#tab-dishwasher .video-btn.active');
+  if (activeVideoBtn) {
+    activeVideoBtn.click(); // löst erneut das Umschalten und Video-Start aus
+  } else {
+    // falls keiner aktiv ist, standardmäßig "Hochgebaut"
+    const defaultBtn = document.querySelector('#tab-dishwasher .video-btn[data-type="hochgebaut"]');
+    if (defaultBtn) defaultBtn.click();
+  }
+});
+
+    });
+  });
+});
+</script>
 
 
+<!-- Bilder Galerie -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox) return;
+
+  const lightboxImg   = lightbox.querySelector('.lightbox-img');
+  const lightboxBg    = lightbox.querySelector('.lightbox-background');
+  const lightboxClose = lightbox.querySelector('.lightbox-close');
+  const prevBtn       = lightbox.querySelector('.lightbox-prev');
+  const nextBtn       = lightbox.querySelector('.lightbox-next');
+
+  const galleryImages = Array.from(document.querySelectorAll('.gallery-grid img'));
+  let currentIndex = -1;
+
+  function openLightbox(index) {
+    currentIndex = index;
+    lightboxImg.src = galleryImages[index].dataset.large || galleryImages[index].src;
+    lightbox.style.display = 'flex';
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.style.display = 'none';
+    lightboxImg.src = '';
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % galleryImages.length;
+    lightboxImg.src = galleryImages[currentIndex].dataset.large || galleryImages[currentIndex].src;
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    lightboxImg.src = galleryImages[currentIndex].dataset.large || galleryImages[currentIndex].src;
+  }
+
+  // Klick auf Vorschaubild öffnet Lightbox
+  galleryImages.forEach((img, i) => {
+    img.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      openLightbox(i);
+    });
+  });
+
+  // Schließen
+  [lightboxBg, lightboxClose, lightboxImg].forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      closeLightbox();
+    });
+  });
+
+  // Pfeile
+  nextBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showNext();
+  });
+
+  prevBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showPrev();
+  });
+
+  // Tastatursteuerung
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.style.display === 'none') return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') showNext();
+    if (e.key === 'ArrowLeft') showPrev();
+  });
+});
+</script>
+
+
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" style="display: none;">
+  <div class="lightbox-background"></div>
+  <span class="lightbox-prev">&#8249;</span>  <!-- ◀ -->
+  <img class="lightbox-img" src="" alt="Großes Bild">
+  <span class="lightbox-next">&#8250;</span>  <!-- ▶ -->
+  <span class="lightbox-close">&times;</span>
+</div>
 
 
 	</body>
