@@ -103,7 +103,7 @@
   <!-- Tabs Navigation -->
   <div class="tab-buttons">
     <button class="tab-button active" data-tab="general">Allgemein</button>
-    <button class="tab-button" data-tab="dishwasher">Status-LED</button>
+    <button class="tab-button" data-tab="status-led">Status-LED</button>
   </div>
 
   <!-- Tab Content -->
@@ -346,7 +346,7 @@
 
   </div> <!-- Ende tab-general -->
 
-  <div class="tab-content" id="tab-dishwasher">
+  <div class="tab-content" id="tab-status-led">
 
 
 
@@ -376,8 +376,8 @@
 
 <!-- Umschalt-Buttons (oben!) -->
 <div class="video-overlay-buttons">
-  <button class="video-btn active" data-target="hochgebaut-section">Hochgebaut</button>
-  <button class="video-btn" data-target="unterbau-section">Unterbau</button>
+    <button class="video-btn active" data-target="hochgebaut-section">Geschirrspüler<br>hochgebaut</button>
+  <button class="video-btn" data-target="unterbau-section">Geschirrspüler<br>Untergebaut</button>
 </div>
 
 
@@ -473,8 +473,8 @@
 
 <!-- Umschalt-Buttons (oben!) -->
 <div class="video-overlay-buttons">
-  <button class="video-btn active" data-target="hochgebaut-section">Hochgebaut</button>
-  <button class="video-btn" data-target="unterbau-section">Unterbau</button>
+  <button class="video-btn active" data-target="hochgebaut-section">Geschirrspüler<br>hochgebaut</button>
+  <button class="video-btn" data-target="unterbau-section">Geschirrspüler<br>Untergebaut</button>
 </div>
 
   <!-- Menü-Balken UNTERBAU-->
@@ -905,7 +905,7 @@ Personenbezogene Daten, die über das Kontaktformular eingegeben werden, werden 
         video.load(); // Browser startet Preloading im Hintergrund
       }
     });
-  }, 2000); // 5 Sekunden warten
+  }, 500); // 0,5 Sekunden warten
 </script>
 
 
@@ -933,7 +933,7 @@ Personenbezogene Daten, die über das Kontaktformular eingegeben werden, werden 
         video.load(); // Browser startet Preloading im Hintergrund
       }
     });
-  }, 2000); // 5 Sekunden warten
+  }, 500); // 0,5 Sekunden warten
 </script>
 
 
@@ -959,7 +959,7 @@ Personenbezogene Daten, die über das Kontaktformular eingegeben werden, werden 
         video.load(); // Browser startet Preloading im Hintergrund
       }
     });
-  }, 2000); // 5 Sekunden warten
+  }, 500); // 0,5 Sekunden warten
 </script>
 
 
@@ -1212,51 +1212,58 @@ document.querySelectorAll('.video-btn').forEach(button => {
 
 
 <script>
-// --- Steuerung für Hochgebaut / Unterbau Videos ---
 document.addEventListener("DOMContentLoaded", () => {
-  const buttons = document.querySelectorAll(".video-btn");
+  const allButtons = document.querySelectorAll(".video-btn");
   const sections = document.querySelectorAll(".dishwasher-section");
 
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      // 1. Button-Zustand aktualisieren
-      buttons.forEach(b => b.classList.remove("active"));
+  function activateSection(targetId) {
+    // Alle Buttons zurücksetzen
+    allButtons.forEach(b => b.classList.remove("active"));
+
+    // Alle Buttons mit demselben target aktivieren
+    document.querySelectorAll(`.video-btn[data-target="${targetId}"]`).forEach(btn => {
       btn.classList.add("active");
+    });
 
-      // 2. Zielabschnitt aktivieren
-      const targetId = btn.dataset.target;
-      sections.forEach(sec => sec.classList.remove("active"));
-      const activeSection = document.getElementById(targetId);
-      activeSection.classList.add("active");
+    // Abschnitte umschalten
+    sections.forEach(sec => sec.classList.remove("active"));
+    const activeSection = document.getElementById(targetId);
+    if (activeSection) activeSection.classList.add("active");
 
-      // 3. Alle Videos pausieren
-      document.querySelectorAll("video").forEach(v => v.pause());
-
-      // 4. Alle Icons der Menü-Bar zurücksetzen
-      activeSection.querySelectorAll(".icon-wrapper").forEach(icon => icon.classList.remove("active"));
-
-      // 5. Erstes Icon automatisch klicken
-      const firstIcon = activeSection.querySelector(".icon-wrapper");
-      if (firstIcon) {
-        firstIcon.click(); // <-- hier wird der Klick getriggert
-      }
-
-// Wenn Tab "dishwasher" wieder aktiviert wird, den aktiven Button erneut auslösen
-document.querySelector('[data-tab="dishwasher"]').addEventListener('click', () => {
-  const activeVideoBtn = document.querySelector('#tab-dishwasher .video-btn.active');
-  if (activeVideoBtn) {
-    activeVideoBtn.click(); // löst erneut das Umschalten und Video-Start aus
-  } else {
-    // falls keiner aktiv ist, standardmäßig "Hochgebaut"
-    const defaultBtn = document.querySelector('#tab-dishwasher .video-btn[data-type="hochgebaut"]');
-    if (defaultBtn) defaultBtn.click();
+    // Videos & Icons verwalten
+    document.querySelectorAll("video").forEach(v => v.pause());
+    activeSection?.querySelectorAll(".icon-wrapper").forEach(icon => icon.classList.remove("active"));
+    const firstIcon = activeSection?.querySelector(".icon-wrapper");
+    if (firstIcon) firstIcon.click();
   }
-});
 
+  allButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const targetId = btn.dataset.target;
+      activateSection(targetId);
     });
   });
+
+  // Wenn "Dishwasher"-Tab aktiviert wird
+  const dishwasherTab = document.querySelector('[data-tab="status-led"]');
+  if (dishwasherTab) {
+    dishwasherTab.addEventListener("click", () => {
+      const activeBtn = document.querySelector('.video-btn.active');
+      if (activeBtn) {
+        activateSection(activeBtn.dataset.target);
+      } else {
+        activateSection('hochgebaut-section');
+      }
+    });
+  }
 });
 </script>
+
+
+
+
+
+
 
 
 <!-- Bilder Galerie -->
@@ -1348,6 +1355,107 @@ document.addEventListener('DOMContentLoaded', () => {
   <span class="lightbox-next">&#8250;</span>  <!-- ▶ -->
   <span class="lightbox-close">&times;</span>
 </div>
+
+<!-- Galerie mit Finger sliden-->
+
+<script>
+let touchStartX = 0;
+let touchEndX = 0;
+
+const lightboxImg = document.querySelector('.lightbox-img');
+const nextBtn = document.querySelector('.lightbox-next');
+const prevBtn = document.querySelector('.lightbox-prev');
+
+lightboxImg.addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+lightboxImg.addEventListener('touchend', e => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const diff = touchEndX - touchStartX;
+  const threshold = 50; // Minimaler Fingerweg in Pixeln
+  if (Math.abs(diff) > threshold) {
+    if (diff < 0) {
+      // Nach links gewischt → nächstes Bild
+      nextBtn.click();
+    } else {
+      // Nach rechts gewischt → vorheriges Bild
+      prevBtn.click();
+    }
+  }
+}
+</script>
+
+<script>
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+const lightboxImg = document.querySelector('.lightbox-img');
+const nextBtn = document.querySelector('.lightbox-next');
+const prevBtn = document.querySelector('.lightbox-prev');
+
+lightboxImg.addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+lightboxImg.addEventListener('touchend', e => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const diff = touchEndX - touchStartX;
+  const threshold = 50; // Minimaler Fingerweg in Pixeln
+  if (Math.abs(diff) > threshold) {
+    if (diff < 0) {
+      // Nach links gewischt → nächstes Bild
+      nextBtn.click();
+    } else {
+      // Nach rechts gewischt → vorheriges Bild
+      prevBtn.click();
+    }
+  }
+}
+</script>
+
+
+
+
+
+<!-- Korrekte URLS pro Reiter in products -->
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const tabs = document.querySelectorAll('.tab-button');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  function activateTab(tabName) {
+    tabs.forEach(btn => btn.classList.toggle('active', btn.dataset.tab === tabName));
+    tabContents.forEach(content => content.classList.toggle('active', content.id === 'tab-' + tabName));
+  }
+
+  // Prüfen, ob ein Hash in der URL ist
+  const hash = window.location.hash.replace('#', '');
+  if(hash) {
+    activateTab(hash);
+  }
+
+  // Klick auf Tabs
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      activateTab(btn.dataset.tab);
+      // URL aktualisieren, ohne die Seite neu zu laden
+      history.replaceState(null, '', `#${btn.dataset.tab}`);
+    });
+  });
+});
+</script>
+
 
 
 	</body>
