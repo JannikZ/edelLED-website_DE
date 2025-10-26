@@ -2771,12 +2771,19 @@ body.is-article-visible .lang-switch {
   user-select: none;
   z-index: 3;
   opacity: 0.8;
-  transition: opacity 0.2s;
-
-  padding-left: 3rem;  /* nur Klickbereich nach links/rechts erweitern */
-  padding-right: 3rem; 
-  margin: 0;            /* keine Verschiebung */
 }
+
+/* unsichtbare, größere Klickfläche */
+.lightbox-prev::before,
+.lightbox-next::before {
+  content: '';
+  position: absolute;
+  top: -1rem;
+  bottom: -1rem;
+  left: -1rem;
+  right: -1rem;
+}
+
 
 
 .lightbox-prev:hover,
@@ -2803,6 +2810,7 @@ body.is-article-visible .lang-switch {
     margin: 2rem 0;            /* Abstand oben/unten */
     opacity: 0.3;              /* optional: transparenten Effekt */
 }
+
 
 
 
