@@ -2587,16 +2587,18 @@ body.is-article-visible .lang-switch {
 
 .video-btn {
   display: flex;
+  line-height: 2;      /* enger Zeilenabstand */
   align-items: center;      /* vertikal mittig */
   justify-content: center;  /* horizontal mittig */
   height: 8rem;           /* feste Höhe – nach Wunsch anpassen */
-  padding: 0 1rem;          /* nur horizontaler Innenabstand */
+  padding: 0 0.3rem;          /* nur horizontaler Innenabstand */
+  gap: 0.1rem;
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.4);
   color: #fff;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
   transition: all 0.25s ease;
@@ -2605,6 +2607,8 @@ body.is-article-visible .lang-switch {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6),
               0 0 15px rgba(255, 255, 255, 0.15);
 }
+
+
 
 
 .video-btn:hover {
@@ -2637,40 +2641,43 @@ body.is-article-visible .lang-switch {
 @media screen and (max-width: 768px) {
   .video-btn {
     height: 5rem; /* kleinere Höhe für Tablets & Mobil */
-    font-size: 0.75rem; /* optional Schrift verkleinern */
-    padding: 0 0.8rem;  /* optional horizontalen Innenabstand anpassen */
+    font-size: 0.5rem; /* optional Schrift verkleinern */
+    padding: 0 0.5rem;  /* optional horizontalen Innenabstand anpassen */
     backdrop-filter: blur(10px);
     background: rgba(255,255,255,0.25);
     box-shadow: 0 3px 10px rgba(0,0,0,0.6),
                 0 0 10px rgba(255,255,255,0.2);
+   line-height: 2;      /* enger Zeilenabstand */
   }
 }
 
 @media screen and (max-width: 480px) {
   .video-btn {
     height: 4.4rem; 
-    font-size: 0.6rem;
-    padding: 0 0.3rem;
+    font-size: 0.5rem;
+    padding: 0 0.2rem;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     background: rgba(255,255,255,0.3);
     background: rgba(255,255,255,0.3);
     box-shadow: 0 3px 8px rgba(0,0,0,0.7),
                 0 0 8px rgba(255,255,255,0.25);
+   line-height: 2;      /* enger Zeilenabstand */
   }
 }
 
 @media screen and (max-width: 380px) {
   .video-btn {   
     height: 4rem; 
-    font-size: 0.6rem;
-    padding: 0 0.3rem;
+    font-size: 0.5rem;
+    padding: 0 0.2rem;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     background: rgba(255,255,255,0.3);
     background: rgba(255,255,255,0.3);
     box-shadow: 0 3px 8px rgba(0,0,0,0.7),
                 0 0 8px rgba(255,255,255,0.25);
+   line-height: 2;      /* enger Zeilenabstand */
   }
 }
 
@@ -2760,6 +2767,12 @@ body.is-article-visible .lang-switch {
   cursor: pointer;
   user-select: none;
   z-index: 3;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+
+  /* --- neue Zeilen --- */
+  padding: 3rem;           /* vergrößert Klickfläche */
+  margin: -3rem;           /* kompensiert, damit Pfeil optisch bleibt wo er war */
   opacity: 0.8;
   transition: opacity 0.2s;
 }
